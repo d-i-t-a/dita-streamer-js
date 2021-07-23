@@ -6,7 +6,7 @@ NodeJS implementation (written in TypeScript) and HTTP micro-services (Express m
 
 ## Build status
 
-[![NPM](https://img.shields.io/npm/v/r2-streamer-js.svg)](https://www.npmjs.com/package/r2-streamer-js) [![David](https://david-dm.org/readium/r2-streamer-js/status.svg)](https://david-dm.org/readium/r2-streamer-js) [![Travis](https://travis-ci.org/readium/r2-streamer-js.svg?branch=develop)](https://travis-ci.org/readium/r2-streamer-js) [![Heroku](https://img.shields.io/badge/app-Heroku-blue.svg)](https://readium2.herokuapp.com)
+[![NPM](https://img.shields.io/npm/v/dita-streamer-js.svg)](https://www.npmjs.com/package/dita-streamer-js) [![David](https://david-dm.org/d-i-t-a/dita-streamer-js/status.svg)](https://david-dm.org/d-i-t-a/dita-streamer-js) [![Travis](https://travis-ci.org/d-i-t-a/dita-streamer-js.svg?branch=develop)](https://travis-ci.org/d-i-t-a/dita-streamer-js) [![Heroku](https://img.shields.io/badge/app-Heroku-blue.svg)](https://readium2.herokuapp.com)
 
 [Changelog](/CHANGELOG.md)
 
@@ -17,24 +17,24 @@ NodeJS implementation (written in TypeScript) and HTTP micro-services (Express m
 
 ## GitHub repository
 
-https://github.com/readium/r2-streamer-js
+https://github.com/d-i-t-a/dita-streamer-js
 
-There is no [github.io](https://readium.github.io/r2-streamer-js) site for this project (no [gh-pages](https://github.com/readium/r2-streamer-js/tree/gh-pages) branch).
+There is no [github.io](https://d-i-t-a.github.io/dita-streamer-js) site for this project (no [gh-pages](https://github.com/d-i-t-a/dita-streamer-js/tree/gh-pages) branch).
 
 ## NPM package
 
-https://www.npmjs.com/package/r2-streamer-js
+https://www.npmjs.com/package/dita-streamer-js
 
 Command line install:
 
-`npm install r2-streamer-js`
+`npm install dita-streamer-js`
 OR
-`yarn add r2-streamer-js`
+`yarn add dita-streamer-js`
 
 ...or manually add in your `package.json`:
 ```json
   "dependencies": {
-    "r2-streamer-js": "latest"
+    "dita-streamer-js": "latest"
   }
 ```
 
@@ -42,9 +42,9 @@ The JavaScript code distributed in the NPM package is usable as-is (no transpila
 
 Several ECMAScript flavours are provided out-of-the-box: ES5, ES6-2015, ES7-2016, ES8-2017:
 
-https://unpkg.com/r2-streamer-js/dist/
+https://unpkg.com/dita-streamer-js/dist/
 
-(alternatively, GitHub mirror with semantic-versioning release tags: https://github.com/edrlab/r2-streamer-js-dist/tree/develop/dist/ )
+(alternatively, GitHub mirror with semantic-versioning release tags: https://github.com/d-i-t-a/dita-streamer-js-dist/tree/develop/dist/ )
 
 The JavaScript code is not bundled, and it uses `require()` statement for imports (NodeJS style).
 
@@ -54,32 +54,32 @@ http://node.green
 
 Note that web-browser Javascript is currently not supported (only NodeJS runtimes).
 
-The type definitions (aka "typings") are included as `*.d.ts` files in `./node_modules/r2-streamer-js/dist/**`, so this package can be used directly in a TypeScript project.
+The type definitions (aka "typings") are included as `*.d.ts` files in `./node_modules/dita-streamer-js/dist/**`, so this package can be used directly in a TypeScript project.
 
 Example usage:
 
 ```javascript
 // from the index file
-import { Server } from "r2-streamer-js";
+import { Server } from "dita-streamer-js";
 
-// ES5 import (assuming node_modules/r2-streamer-js/):
-import { Server } from "r2-streamer-js/dist/es5/src/http/server";
+// ES5 import (assuming node_modules/dita-streamer-js/):
+import { Server } from "dita-streamer-js/dist/es5/src/http/server";
 
 // ... or alternatively using a convenient path alias in the TypeScript config (+ WebPack etc.):
-import { Server } from "@r2-streamer-js/http/server";
+import { Server } from "@dita-streamer-js/http/server";
 ```
 
 ## Dependencies
 
-https://david-dm.org/readium/r2-streamer-js
+https://david-dm.org/d-i-t-a/dita-streamer-js
 
-A [package-lock.json](https://github.com/readium/r2-streamer-js/blob/develop/package-lock.json) is provided (modern NPM replacement for `npm-shrinkwrap.json`).
+A [package-lock.json](https://github.com/d-i-t-a/dita-streamer-js/blob/develop/package-lock.json) is provided (modern NPM replacement for `npm-shrinkwrap.json`).
 
-A [yarn.lock](https://github.com/readium/r2-streamer-js/blob/develop/yarn.lock) file is currently *not* provided at the root of the source tree.
+A [yarn.lock](https://github.com/d-i-t-a/dita-streamer-js/blob/develop/yarn.lock) file is currently *not* provided at the root of the source tree.
 
 ## Continuous Integration
 
-https://travis-ci.org/readium/r2-streamer-js
+https://travis-ci.org/d-i-t-a/dita-streamer-js
 
 TravisCI builds are triggered automatically at every Git "push" in the `develop` branch.
 
@@ -99,11 +99,11 @@ HTTP CORS headers are served to allow cross-origin / remote API requests.
 
 NPM package (latest published):
 
-https://unpkg.com/r2-streamer-js/dist/gitrev.json
+https://unpkg.com/dita-streamer-js/dist/gitrev.json
 
 Alternatively, GitHub mirror with semantic-versioning release tags:
 
-https://raw.githack.com/edrlab/r2-streamer-js-dist/develop/dist/gitrev.json
+https://raw.githack.com/edrd-i-t-a/dita-streamer-js-dist/develop/dist/gitrev.json
 
 Heroku app (latest deployed):
 
@@ -113,7 +113,7 @@ https://readium2.herokuapp.com/version
 
 Command line steps (NPM, but similar with YARN):
 
-1) `cd r2-streamer-js`
+1) `cd dita-streamer-js`
 2) `git status` (please ensure there are no local changes, especially in `package-lock.json` and the dependency versions in `package.json`)
 3) `rm -rf node_modules` (to start from a clean slate)
 4) `npm install`, or alternatively `npm ci` (both commands initialize the `node_modules` tree of package dependencies, based on the strict `package-lock.json` definition)
@@ -127,11 +127,11 @@ Command line steps (NPM, but similar with YARN):
 ### Basic usage
 
 ```javascript
-// ES5 import (assuming node_modules/r2-streamer-js/):
-import { Server } from "r2-streamer-js/dist/es5/src/http/server";
+// ES5 import (assuming node_modules/dita-streamer-js/):
+import { Server } from "dita-streamer-js/dist/es5/src/http/server";
 
 // ... or alternatively using a convenient path alias in the TypeScript config (+ WebPack etc.):
-import { Server } from "@r2-streamer-js/http/server";
+import { Server } from "@dita-streamer-js/http/server";
 
 // Constructor parameter is optional:
 // disableDecryption: true

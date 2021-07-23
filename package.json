@@ -1,6 +1,6 @@
 {
-  "name": "r2-streamer-js",
-  "version": "1.0.34",
+  "name": "dita-streamer-js",
+  "version": "1.1.1",
   "description": "Readium 2 'streamer' for NodeJS (TypeScript)",
   "keywords": [
     "readium",
@@ -27,7 +27,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/readium/r2-streamer-js.git"
+    "url": "git+https://github.com/d-i-t-a/dita-streamer-js.git"
   },
   "author": {
     "name": "Readium Foundation",
@@ -42,9 +42,9 @@
     }
   ],
   "bugs": {
-    "url": "https://github.com/readium/r2-streamer-js/issues"
+    "url": "https://github.com/d-i-t-a/dita-streamer-js/issues"
   },
-  "homepage": "https://github.com/readium/r2-streamer-js",
+  "homepage": "https://github.com/d-i-t-a/dita-streamer-js",
   "dependencies": {
     "ajv": "^8.3.0",
     "ajv-formats": "^2.1.0",
@@ -104,10 +104,10 @@
     "sorcery": "^0.10.0",
     "typescript": "^4.2.4"
   },
-  "main": "dist/es6-es2015/src/index.js",
-  "types": "dist/es6-es2015/src/index.d.js",
+  "main": "dist/es8-es2017/src/index.js",
+  "types": "dist/es8-es2017/src/index.d.js",
   "bin": {
-    "r2-streamer-js-server": "dist/es6-es2015/src/http/server-cli.js"
+    "dita-streamer-js-server": "dist/es8-es2017/src/http/server-cli.js"
   },
   "files": [
     "LICENSE",
@@ -118,10 +118,10 @@
   ],
   "scripts": {
     "cson2json": "sed -E \"s/#ECMASCRIPT#/es5/g\" package-scripts-bundle.cson > tmp-bundle.cson && sed -E \"s/#ECMASCRIPT#/es6-es2015/g\" package-scripts-bundle.cson >> tmp-bundle.cson && sed -E \"s/#ECMASCRIPT#/es7-es2016/g\" package-scripts-bundle.cson >> tmp-bundle.cson && sed -E \"s/#ECMASCRIPT#/es8-es2017/g\" package-scripts-bundle.cson >> tmp-bundle.cson && sed -E \"s/#ECMASCRIPT#/es5/g\" package-scripts-build.cson > tmp-build.cson && sed -E \"s/#ECMASCRIPT#/es6-es2015/g\" package-scripts-build.cson >> tmp-build.cson && sed -E \"s/#ECMASCRIPT#/es7-es2016/g\" package-scripts-build.cson >> tmp-build.cson && sed -E \"s/#ECMASCRIPT#/es8-es2017/g\" package-scripts-build.cson >> tmp-build.cson && json -I -f package.json -e \"this.scripts=$(cat package-scripts.cson tmp-build.cson tmp-bundle.cson | node node_modules/.bin/cson2json)\" && rimraf tmp-*.cson",
-    "copydist": "cpy \"./dist/**/*\" ../r2-navigator-js/node_modules/r2-streamer-js/ --cwd=./ --parents --no-dir && cpy \"./dist/**/*\" ../r2-testapp-js/node_modules/r2-streamer-js/ --cwd=./ --parents --no-dir && cpy \"./dist/**/*\" ../readium-desktop/node_modules/r2-streamer-js/ --cwd=./ --parents --no-dir",
+    "copydist": "cpy \"./dist/**/*\" ../r2-navigator-js/node_modules/dita-streamer-js/ --cwd=./ --parents --no-dir && cpy \"./dist/**/*\" ../r2-testapp-js/node_modules/dita-streamer-js/ --cwd=./ --parents --no-dir && cpy \"./dist/**/*\" ../readium-desktop/node_modules/dita-streamer-js/ --cwd=./ --parents --no-dir",
     "quick-build-dist": "npm run transpile:typescript:es8-es2017+afterdist && npm run copydist",
     "_pregitdist": "npm run build:all",
-    "gitdist": "cd ../r2-streamer-js-dist/ && git checkout -B develop && (git pull || echo \"pull\") && (git --no-pager status || echo status) && ((rimraf \"*\" && echo rimrafOK) || echo rimrafNOK) && cpy ../r2-streamer-js/package.json . && cpy ../r2-streamer-js/package-lock.json . && cpy ../r2-streamer-js/LICENSE . && cpy ../r2-streamer-js/README.md . && cpy \"./docs/**/*\" ../r2-streamer-js-dist/ --cwd=../r2-streamer-js/ --parents --no-dir && cpy \"./dist/**/*\" ../r2-streamer-js-dist/ --cwd=../r2-streamer-js/ --parents --no-dir && (git add * || echo add) && (git commit -a -m \"add new dist\" || echo commit) && (git push --set-upstream origin develop || echo push) && (git --no-pager status || echo status) && cd ../r2-streamer-js",
+    "gitdist": "cd ../dita-streamer-js-dist/ && git checkout -B develop && (git pull || echo \"pull\") && (git --no-pager status || echo status) && ((rimraf \"*\" && echo rimrafOK) || echo rimrafNOK) && cpy ../dita-streamer-js/package.json . && cpy ../dita-streamer-js/package-lock.json . && cpy ../dita-streamer-js/LICENSE . && cpy ../dita-streamer-js/README.md . && cpy \"./docs/**/*\" ../dita-streamer-js-dist/ --cwd=../dita-streamer-js/ --parents --no-dir && cpy \"./dist/**/*\" ../dita-streamer-js-dist/ --cwd=../dita-streamer-js/ --parents --no-dir && (git add * || echo add) && (git commit -a -m \"add new dist\" || echo commit) && (git push --set-upstream origin develop || echo push) && (git --no-pager status || echo status) && cd ../dita-streamer-js",
     "start": "cross-env DEBUG=r2:* node \"./dist/es6-es2015/src/http/server-cli.js\" ./misc/epubs/",
     "prepare_": "npm run build:all",
     "prepublish_": "npm run prepare_",
@@ -137,7 +137,7 @@
     "postbuild:all": "npm run afterdist && npm run bundle:all",
     "clean": "rimraf ./dist && rimraf ./now && mkdirp ./dist",
     "lint": "npm run lint:all && npm run lint:typescript:full",
-    "lint:all": "eclint check \"**/*\" \"!**/*.node\" \"!.git/**/*\" \"!node_modules*/**/*\" \"!dist/**/*\" \"!misc/**/*\" \"!misc/json-schema/**/*\" \"!now/**/*\" \"!.vscode/**/*\" \"!.history/**/*\" \"!**/.DS_Store\" \"!**/*.epub\" \"!**/*.cbz\" \"!**/*.jpg\" \"!**/*.jpeg\" \"!**/*.png\" \"!**/*.log\"",
+    "lint:all": "eclint check \"**/*\" \"!**/*.node\" \"!.git/**/*\" \"!node_modules*/**/*\" \"!dist/**/*\" \"!misc/**/*\" \"!misc/json-schema/**/*\" \"!now/**/*\" \"!.vscode/**/*\" \"!.idea/**/*\" \"!.history/**/*\" \"!**/.DS_Store\" \"!**/*.epub\" \"!**/*.cbz\" \"!**/*.jpg\" \"!**/*.jpeg\" \"!**/*.png\" \"!**/*.log\"",
     "lint:typescript:full": "eslint \"src/**/*.ts\"",
     "pretranspile:typescript": "npm run clean",
     "transpile:typescript": "tsc --pretty -p \"./tsconfig.json\"",
@@ -158,7 +158,7 @@
     "server-https-debug": "cross-env DEBUG=r2:* PORT=443 npm run server",
     "server-https-debug-x": "cross-env DEBUG=* PORT=443 npm run server",
     "heroku-prebuild": "echo \"heroku-prebuild\"",
-    "heroku-postbuild": "echo \"heroku-postbuild\" && npm run clean && npm run transpile:typescript:es8-es2017 && npm run typescript:imports && curl -s -o ./dist/gitrev.json https://raw.githubusercontent.com/edrlab/r2-streamer-js-dist/develop/dist/gitrev.json && ls ./dist && cat ./dist/gitrev.json",
+    "heroku-postbuild": "echo \"heroku-postbuild\" && npm run clean && npm run transpile:typescript:es8-es2017 && npm run typescript:imports && curl -s -o ./dist/gitrev.json https://raw.githubusercontent.com/d-i-t-a/dita-streamer-js-dist/develop/dist/gitrev.json && ls ./dist && cat ./dist/gitrev.json",
     "prebuild:es5": "npm run lint && npm run clean",
     "build:es5": "npm run transpile:typescript:es5",
     "postbuild:es5": "npm run afterdist && npm run bundle:es5",

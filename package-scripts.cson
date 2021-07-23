@@ -12,9 +12,9 @@
   '
 
   'copydist': '
-    cpy "./dist/**/*" ../r2-navigator-js/node_modules/r2-streamer-js/ --cwd=./ --parents --no-dir &&
-    cpy "./dist/**/*" ../r2-testapp-js/node_modules/r2-streamer-js/ --cwd=./ --parents --no-dir &&
-    cpy "./dist/**/*" ../readium-desktop/node_modules/r2-streamer-js/ --cwd=./ --parents --no-dir
+    cpy "./dist/**/*" ../r2-navigator-js/node_modules/dita-streamer-js/ --cwd=./ --parents --no-dir &&
+    cpy "./dist/**/*" ../r2-testapp-js/node_modules/dita-streamer-js/ --cwd=./ --parents --no-dir &&
+    cpy "./dist/**/*" ../readium-desktop/node_modules/dita-streamer-js/ --cwd=./ --parents --no-dir
   '
 
   'quick-build-dist': '
@@ -27,22 +27,22 @@
   '
 
   'gitdist': '
-    cd ../r2-streamer-js-dist/ &&
+    cd ../dita-streamer-js-dist/ &&
     git checkout -B develop &&
     (git pull || echo "pull") &&
     (git --no-pager status || echo status) &&
     ((rimraf "*" && echo rimrafOK) || echo rimrafNOK) &&
-    cpy ../r2-streamer-js/package.json . &&
-    cpy ../r2-streamer-js/package-lock.json . &&
-    cpy ../r2-streamer-js/LICENSE . &&
-    cpy ../r2-streamer-js/README.md . &&
-    cpy "./docs/**/*" ../r2-streamer-js-dist/ --cwd=../r2-streamer-js/ --parents --no-dir &&
-    cpy "./dist/**/*" ../r2-streamer-js-dist/ --cwd=../r2-streamer-js/ --parents --no-dir &&
+    cpy ../dita-streamer-js/package.json . &&
+    cpy ../dita-streamer-js/package-lock.json . &&
+    cpy ../dita-streamer-js/LICENSE . &&
+    cpy ../dita-streamer-js/README.md . &&
+    cpy "./docs/**/*" ../dita-streamer-js-dist/ --cwd=../dita-streamer-js/ --parents --no-dir &&
+    cpy "./dist/**/*" ../dita-streamer-js-dist/ --cwd=../dita-streamer-js/ --parents --no-dir &&
     (git add * || echo add) &&
     (git commit -a -m "add new dist" || echo commit) &&
     (git push --set-upstream origin develop || echo push) &&
     (git --no-pager status || echo status) &&
-    cd ../r2-streamer-js
+    cd ../dita-streamer-js
   '
 
   'start': '
@@ -272,8 +272,8 @@
     npm run clean &&
     npm run transpile:typescript:es8-es2017 &&
     npm run typescript:imports &&
-    curl -s -o ./dist/gitrev.json https://raw.githubusercontent.com/edrlab/r2-streamer-js-dist/develop/dist/gitrev.json &&
+    curl -s -o ./dist/gitrev.json https://raw.githubusercontent.com/d-i-t-a/dita-streamer-js-dist/develop/dist/gitrev.json &&
     ls ./dist &&
     cat ./dist/gitrev.json
   '
-# https://raw.githack.com/edrlab/r2-streamer-js-dist/develop/dist/gitrev.json
+# https://raw.githack.com/d-i-t-a/dita-streamer-js-dist/develop/dist/gitrev.json

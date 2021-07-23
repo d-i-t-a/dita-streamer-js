@@ -50,7 +50,7 @@ exec("npm --version", function(execError, stdin, stderr) {
         if (branch.indexOf(detached) === 0) {
             branch = branch.substr(detached.length);
         }
-        const gitUrlBase = "https://github.com/readium/r2-streamer-js/";
+        const gitUrlBase = "https://github.com/d-i-t-a/dita-streamer-js/";
         json = {
             "node": process.version.replace("v", ""),
             "npm": npmVersion,

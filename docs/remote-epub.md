@@ -1,10 +1,10 @@
 # Remote EPUB URLs
 
-`r2-streamer-js` implements support for web-hosted publications. Visit this link and enter a public EPUB HTTP URL (see examples below):
+`dita-streamer-js` implements support for web-hosted publications. Visit this link and enter a public EPUB HTTP URL (see examples below):
 
 https://readium2.herokuapp.com/url/
 
-Technical note: EPUB files served by `r2-streamer-js` are normally loaded from the local filesystem. However, remote publications (such as those referenced from OPDS feeds) must be fetched efficiently across the network. This is done using HTTP 1.1 partial requests (arbitrary byte ranges inside EPUB files, instead of downloading the entire publication at once), in order to support large publications with acceptable levels of performance and memory consumption (e.g. audio / video EPUB3 files).
+Technical note: EPUB files served by `dita-streamer-js` are normally loaded from the local filesystem. However, remote publications (such as those referenced from OPDS feeds) must be fetched efficiently across the network. This is done using HTTP 1.1 partial requests (arbitrary byte ranges inside EPUB files, instead of downloading the entire publication at once), in order to support large publications with acceptable levels of performance and memory consumption (e.g. audio / video EPUB3 files).
 
 More information about OPDS support here: [opds.md](opds.md)
 

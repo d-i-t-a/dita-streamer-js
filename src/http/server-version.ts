@@ -77,7 +77,7 @@ export function serverVersion(server: Server, topRouter: express.Application) {
             const jsonPretty = jsonMarkup(jsonObj, css2json(jsonStyle));
 
             res.status(200).send("<html><body>" +
-                "<h1>R2-STREAMER-JS VERSION INFO</h1>" +
+                "<h1>DITA-STREAMER-JS VERSION INFO</h1>" +
                 "<hr><p><pre>" + jsonPretty + "</pre></p>" +
                 // "<hr><p><pre>" + jsonStr + "</pre></p>" +
                 // "<p><pre>" + dumpStr + "</pre></p>" +

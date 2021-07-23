@@ -1,6 +1,6 @@
 # HTTP API
 
-`r2-streamer-js` contains an Express server with support for the following routes:
+`dita-streamer-js` contains an Express server with support for the following routes:
 
 ## GET /opds2/publications.json
 

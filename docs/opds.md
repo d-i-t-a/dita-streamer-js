@@ -1,6 +1,6 @@
 # OPDS support
 
-`r2-streamer-js` implements a basic OPDS feed parser / navigator. Visit this link and enter a public OPDS feed's HTTP URL (see examples below):
+`dita-streamer-js` implements a basic OPDS feed parser / navigator. Visit this link and enter a public OPDS feed's HTTP URL (see examples below):
 
 https://readium2.herokuapp.com/opds-v1-v2-convert/
 
