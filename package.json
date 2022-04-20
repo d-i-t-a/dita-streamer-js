@@ -1,6 +1,6 @@
 {
   "name": "dita-streamer-js",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Readium 2 'streamer' for NodeJS (TypeScript)",
   "keywords": [
     "readium",
@@ -64,7 +64,7 @@
     "r2-utils-js": "^1.0.25",
     "request": "^2.88.2",
     "request-promise-native": "^1.0.9",
-    "selfsigned": "^1.10.11",
+    "selfsigned": "^2.0.1",
     "ta-json-x": "^2.5.3",
     "terser": "^5.7.0",
     "tmp": "^0.2.1",
